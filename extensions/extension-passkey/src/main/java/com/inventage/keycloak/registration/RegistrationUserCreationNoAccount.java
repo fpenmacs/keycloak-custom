@@ -66,7 +66,7 @@ public class RegistrationUserCreationNoAccount extends RegistrationUserCreation 
         context.getEvent().detail(Details.REGISTER_METHOD, "form");
 
         UserProfileProvider profileProvider = context.getSession().getProvider(UserProfileProvider.class);
-        UserProfile profile = profileProvider.create(UserProfileContext.REGISTRATION_PROFILE, formData);
+        UserProfile profile = profileProvider.create(UserProfileContext.REGISTRATION, formData);
 
         //We check if the email address is already in use. If yes, we return an error that is displayed to the user.
         try {
@@ -75,7 +75,7 @@ public class RegistrationUserCreationNoAccount extends RegistrationUserCreation 
             List<FormMessage> errors = Validation.getFormErrorsFromValidation(pve.getErrors());
 
             if (pve.hasError(Messages.EMAIL_EXISTS, Messages.INVALID_EMAIL)) {
-                context.getEvent().detail(Details.EMAIL, profile.getAttributes().getFirstValue(UserModel.EMAIL));
+                context.getEvent().detail(Details.EMAIL, profile.getAttributes().getFirst(UserModel.EMAIL));
             }
 
             if (pve.hasError(Messages.EMAIL_EXISTS)) {
