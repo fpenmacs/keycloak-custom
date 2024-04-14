@@ -19,6 +19,7 @@
 
     <modules>
         <module>extension-passkey</module>
+        <module>extension-federatedusers</module>
     </modules>
 
     <dependencies>

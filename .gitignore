@@ -27,3 +27,4 @@ release.properties
 /.idea/codeStyles/codeStyleConfig.xml
 /.idea/dataSources.xml
 /.idea/codeStyles/Project.xml
+/extensions/extension-federatedusers/dist/
